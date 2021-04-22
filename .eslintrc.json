@@ -1,0 +1,64 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers",
+        "prettier"
+    ],
+    "rules": {
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "no-plusplus":"off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "prettier/prettier": "error",
+      "class-methods-use-this": "off",
+      "camelcase": "off",
+      "@typescript-eslint/camelcase": "off",
+      "comma-dangle": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "space-before-function-paren": "off",
+      "lines-between-class-members":"off",
+      "import-helpers/order-imports": [
+        "warn",
+        { // example configuration
+          "newlinesBetween": "always",
+          "groups": [
+            "module",
+            "/^@shared/",
+            ["parent", "sibling", "index"]
+          ],
+          "alphabetize": { "order": "asc", "ignoreCase": true }
+        }
+      ],
+      "import/prefer-default-export": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+}
